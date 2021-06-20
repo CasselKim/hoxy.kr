@@ -6,6 +6,7 @@
 그럴 때 사용할 수 있는 검색 플랫폼을 만들어보자.  
 - Start : 2021/06/20 ~  
 - Participant : Just Me
+- Destination : HTML, CSS, 장고, DB(설계), 퍼블리싱 입문 + 재미
 - Project Managing : [노션 링크](https://www.notion.so/casselkim/HOXY-686358c4cac94619ae9af01d569646d2)  
 
 ## Process
