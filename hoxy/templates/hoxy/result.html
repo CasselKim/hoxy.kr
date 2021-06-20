@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<h1>계정 결과창</h1>
+
+<div>
+    여기는  계정({{ result.id }})의 결과창 화면입니다.
+</div>
+
+<form action="{% url 'hoxy:report_button' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="답변등록">
+</form>
