@@ -16,11 +16,12 @@
 - 같이했던 플레이어의 전적과 비교해서 다르면 닉네임 업데이트
 
 ### 2. 스토리보드 작성
-[카카오 오븐을 통한 스토리보드 작성](https://ovenapp.io/view/TPsALalvuPTjatV9Xe4Av7izp8rngkZL/Lynbr)  
+- [카카오 오븐을 통한 스토리보드 작성](https://ovenapp.io/view/TPsALalvuPTjatV9Xe4Av7izp8rngkZL/Lynbr)  
 
 ### 3. DB 설계
-[erdcloud](https://www.erdcloud.com/)를 이용한 관계형 데이터베이스 다이어그램 작성 [참고 블로그](https://velog.io/@drrobot409/DataAnalyst3.-%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%98-%EC%9D%B4%ED%95%B4)  
 ![image](image2.png)  
+- [erdcloud](https://www.erdcloud.com/)를 이용한 관계형 데이터베이스 다이어그램 작성 ([참고 블로그](https://velog.io/@drrobot409/DataAnalyst3.-%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%98-%EC%9D%B4%ED%95%B4))  
+
 
 ### 4. 장고 개발플로우
 ![image](image3.png)
