@@ -28,8 +28,11 @@
 ![image](image3.png)
 
 ## Demo
+### Main page
 ![image](image4.png)  
 (개인적으로 춘식이를 좋아해서 사용해봤다. 상업용으로 사용할 생각은 없으나 그래도 캐릭터 저작권법을 찾아봐야겠다.)  
 ![image](image5.png)  
 개인적인 용도로 사용하는 것은 출처를 밝히는 조건 하에서 가능하지만, 수익을 창출할 목적은 없지만 아무래도 퍼블리싱하는 입장에서 부담스러운게 사실이다. 그래서 로고의 제작을 맡겼다.  
 ![image](image6.PNG)
+### Report page
+![image](image7.png)
