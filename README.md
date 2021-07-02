@@ -53,4 +53,5 @@
 장고는 동기적으로 처리된다. 즉 싱글 프로세스란 뜻이며, 서버를 돌리는 동안 다른건 못한다는 뜻이다. 하지만 위의 백엔드 알고리즘을 처리하기 위해서는 매일 12시마다 소환사 정보를 받아와야한다. 그러므로 비동기(일이 점점 커지는데..) 방식으로 풀이해보자.  
 ### Docker
 ![image](image10.png)  
-Celery는 윈도우를 지원하지 않기때문에 도커 위에서 Celery를 사용해보자 (로드맵 : 도커 → 장고설치 → Redis → Celery → 비동기처리)
+Celery는 윈도우를 지원하지 않기때문에 도커 위에서 Celery를 사용해보자 (로드맵 : 도커 → 장고설치 → Redis → Celery → 비동기처리)  
+[1. 도커 -> 장고](https://ohohs.tistory.com/entry/Docker%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-Windows%EC%97%90%EC%84%9C-Linux-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95-feat-Django-1)
