@@ -56,3 +56,5 @@
 Celery는 윈도우를 지원하지 않기때문에 도커 위에서 Celery를 사용해보자 (로드맵 : 도커 → 장고설치 → Redis → Celery → 비동기처리)  
 [1. 도커 -> 장고](https://ohohs.tistory.com/entry/Docker%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-Windows%EC%97%90%EC%84%9C-Linux-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95-feat-Django-1)  
 문제 : 개발환경 호환성 문제때문에 계속 진도를 못나가는 중이다. 도커-장고-윈도우-VSCode의 4박자를 모두 충족시키는 방법을 찾는 중임.(2021/07/05)
+![image](image11.png)  
+말하자마자 됐다! [(참고:VScode 공식문서)](https://code.visualstudio.com/docs/containers/quickstart-python#_add-docker-files-to-the-project)  
