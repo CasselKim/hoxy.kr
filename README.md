@@ -8,6 +8,7 @@
 - **Participant** : Just Me
 - **Destination** : HTML, CSS, 장고, DB(설계), 퍼블리싱 입문 + 재미
 - **Project Managing** : [노션 링크](https://www.notion.so/casselkim/HOXY-686358c4cac94619ae9af01d569646d2)  
+- **Docker** : [노션 링크](https://www.notion.so/casselkim/7154a622aa294505a88c99e60f8710c1)  
 
 ## Process
 ### 1. 기능 정의
