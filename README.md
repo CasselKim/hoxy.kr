@@ -59,3 +59,5 @@ Celery는 윈도우를 지원하지 않기때문에 도커 위에서 Celery를 �
 문제 : 개발환경 호환성 문제때문에 계속 진도를 못나가는 중이다. 도커-장고-윈도우-VSCode의 4박자를 모두 충족시키는 방법을 찾는 중임.(2021/07/05)
 ![image](image11.png)  
 말하자마자 됐다! [(참고:VScode 공식문서)](https://code.visualstudio.com/docs/containers/quickstart-python#_add-docker-files-to-the-project)  
+![image](image12.png)  
+도커(장고-Celery-rabbitmq) 삼박자 프로세스 구성 완료
