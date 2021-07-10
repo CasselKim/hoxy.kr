@@ -12,6 +12,17 @@
 ## Environment
 ![image](env.png)
 
+## Requirements
+- Windows 10 Pro Edition
+- VS Code
+- Docker
+- Celery
+- Rabbitmq
+- python==3.6
+- django==1.8
+- pillow
+- requests
+
 ## Process
 ### 1. 기능 정의
 ![image](image1.png)
