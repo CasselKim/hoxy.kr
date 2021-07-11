@@ -1,0 +1,1 @@
+/etc/init.d/nginx start & uwsgi --socket /tmp/mysite.sock --module config.wsgi --chmod-socket=666 --env=LANG=en_US.UTF-8

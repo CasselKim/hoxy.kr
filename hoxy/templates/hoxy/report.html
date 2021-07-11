@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {% load static %}
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'boot_strap.css' %}" rel="stylesheet" />
+
+        <style>
+            .fa{
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:400;
+                font-size : 1rem;
+                vertical-align: middle;
+            }
+            .fb {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:500;
+                font-size : 1.1rem;
+                vertical-align: middle;
+            }
+            .fc {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:700;
+                font-size : 1.3rem;
+                vertical-align: middle;
+            }
+            .fd {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:700;
+                font-size : 1.5rem;
+                margin-bottom:0.6rem;
+                color:#540D0D;
+                vertical-align: middle;
+            }
+            .fe {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:300;
+                font-size : 0.8rem;
+                vertical-align: middle;
+            }
+            
+            .penel{
+                padding-top : 3rem;
+                padding-bottom : 5rem;
+            }
+
+            .input-box{
+                padding-top:0.4rem;
+                padding-bottom:0.4rem;
+                padding-left:0.5rem;
+                padding-right:2rem;
+                background-color:#FFF3D9;
+                border-radius:0.3rem;
+                border:0;
+                border-color:rgb(255,255,255);
+                disable:True;
+            }
+            .input-box:focus{
+                outline: 0;
+                box-shadow: 0 0 0 0.25rem rgba(185, 134, 87, 0.25);
+            }
+
+            .filename_display{
+                background-color:#FDD789;
+                border:0;
+                border-color:rgb(255,255,255,1);
+                disable:True;
+            }
+            .filename_display:focus{
+                outline: 0;
+                box-shadow: 0 0 0 1 rgba(185, 134, 87, 1);
+            }
+
+
+            .mt-custom{
+                margin-top:0.265rem;
+            }
+
+            .form-control::placeholder {
+                color: #B98756 ;
+                opacity: 1;
+            }
+
+            .filebox label { 
+                display: inline-block; 
+                padding: .5em .75em; 
+                color: #fff; 
+                font-size: inherit; 
+                line-height: normal; 
+                vertical-align: middle; 
+                background-color: #B98756 ;
+                cursor: pointer; 
+                border-radius: 0.3rem; 
+            }
+
+            .filebox label:hover{ 
+                color: #fff;
+                background-color: #A37343 ;
+                border-color: #A37343 ;
+            }
+            
+            .filebox input[type="file"] {
+                /* 파일 필드 숨기기 */ 
+                position: absolute; 
+                width: 1px; 
+                height: 1px; 
+                padding: 0; 
+                margin: -1px; 
+                clip:rect(0,0,0,0); 
+                border: 0; 
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-light static-top">
+            <a class="navbar-brand ms-3" style="color:#B98756;" href="/">
+                <img src="{%static 'img/logo_navbar.png'%}" alt="My Image" href="/" style='width:100%; height:100%;padding-top:2rem; padding-bottom:2rem;'>
+            </a>
+        </nav>
+        
+        <div class='penel'>    
+            <div class='container text-center col-xl-6'>
+                <form class='col-md-12 text-start' action="{% url 'hoxy:submit' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class='row mb-5'>
+                        <h1 class='fd text-center' style='font-size:2rem'>제보하기</h1>
+                    </div>
+                    <div class="mb-4">
+                        <div class='row text-center mb-3 col-md-12 ms-0 me-0'><h4 class='fc'>기본정보</h4></div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>롤 닉네임</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-nickname rounded-3 fa py-1 ps-2 pe-5" type="search" placeholder='롤 닉네임' name="kw-nickname">
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>이름</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-name rounded-3 fa py-1 ps-2 pe-5" type="text" placeholder='이름(활동명)' name="kw-name">
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 w-25'><h class='fa'>프로필사진</h></div>
+                            <div class='col-md-6 text-start'>
+                                    <div class="filebox fe">
+                                        <label for="ex_file" class='mb-2'>첨부하기</label>
+                                        <input type="file" id="ex_file" class='upload-hidden mb-2' name='profile'></input>
+                                        <input class='filename_display kw-profile fe ms-1 mb-2' id='kw-profile' value='filename' readonly/></input>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <div class='row text-center mb-2 col-md-12  ms-0 me-0'><h4 class='fc'>링크</h4></div>
+                        <div class='fe text-center mb-4 w-75 mx-auto'>해당 유저의 정보를 알 수 있는 링크를 입력해주세요. 최소 1개 이상 작성해주셔야합니다.</div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>유튜브</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-youtube rounded-3 fa py-1 ps-2 pe-5" type="search" name="kw-youtube" placeholder='채널주소'>
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>트위치</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-twitch rounded-3 fa py-1 ps-2 pe-5" type="search" name="kw-twitch" placeholder='프로필주소'>
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>아프리카tv</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-afreecatv rounded-3 fa py-1 ps-2 pe-5" type="search" name="kw-afreecatv" placeholder='방송국주소'>
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>나무위키</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-namu rounded-3 fa py-1 ps-2 pe-5" type="search" name="kw-namu" placeholder='나무위키 프로필주소'>
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>인스타그램</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-instagram rounded-3 fa py-1 ps-2 pe-5" type="search" name="kw-instagram" placeholder='프로필주소'>
+                            </div>
+                        </div>
+                        <div class='d-flex'>
+                            <div class='text-end me-3 mb-3 mt-custom w-25'><h class='fa'>DCinside</h></div>
+                            <div class='col-md-6'>
+                                <input class="form-control kw-dcinside rounded-3 fa py-1 ps-2 pe-5" type="search" name="kw-dcinside" placeholder='갤러리주소'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class='row text-center mb-2 col-md-12 ms-0 me-0'><h4 class='fc'>증거자료</h4></div>
+                        <div class='fe text-center mb-4 w-75 mx-auto'>당사자가 직접 롤을 플레이하고 있는 증거 사진 or 영상을 보내주세요. 검수 후 등록됩니다. (링크까지 있으면 더욱 빨리 등록됩니다.)</div>
+                        <div class='d-flex mb-4'>
+                            <div class='text-end me-3 w-25'><h class='fa'>증거사진1</h></div>
+                            <div class='col-md-6'>
+                                    <div class="filebox fe">
+                                        <label for="ex_file2" class='mb-2'>첨부하기</label>
+                                        <input type="file" id="ex_file2" class='upload-hidden2 mb-2' name ='proof_pic1'>
+                                        <input class='filename_display kw-proof_pic_url1 fe ms-1 mb-2' id='kw-proof_pic_url1' value='filename' readonly/></input>
+                                    </div>
+                                <div class='col-md-12'>
+                                    <input class="form-control kw-proof_pic_link1 rounded-3 fa py-1 ps-2" type="search" name="kw-proof_pic_link1" placeholder='(선택) 링크입력'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='d-flex mb-4'>
+                            <div class='text-end me-3 w-25'><h class='fa'>증거사진2</h></div>
+                            <div class='col-md-6'>
+                                    <div class="filebox fe">
+                                        <label for="ex_file3" class='mb-2'>첨부하기</label>
+                                        <input type="file" id="ex_file3" class='upload-hidden3 mb-2'  name='proof_pic2' >
+                                        <input class='filename_display kw-proof_pic_url2 fe ms-1 mb-2' id='kw-proof_pic_url2' value='filename' readonly/></input>
+                                    </div>
+                                <div class='col-md-12'>
+                                    <input class="form-control kw-proof_pic_link2 rounded-3 fa py-1 ps-2" type="search" name="kw-proof_pic_link2" placeholder='(선택) 링크입력'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='d-flex mb-4'>
+                            <div class='text-end me-3 w-25'><h class='fa'>증거영상</h></div>
+                            <div class='col-md-6'>
+                                    <div class="filebox fe">
+                                        <label for="ex_file4" class='mb-2'>첨부하기</label>
+                                        <input type="file" id="ex_file4" class='upload-hidden4 mb-2' name='proof_vod'>
+                                        <input class='filename_display kw-proof_vod_url1 fe ms-1 mb-2' id='kw-proof_vod_url1' value='filename' readonly/></input>
+                                    </div>
+                                <div class='col-md-12'>
+                                    <input class="form-control kw-proof_vod_link1 rounded-3 fa py-1 ps-2" type="search" name="kw-proof_vod_link1" placeholder='(선택) 링크입력'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='m-auto w-50 text-center'>
+                        <input class="btn btn-primary fa" id="button-submit" type="submit" name='submit' style="padding-top:0.4rem; padding-bottom:0.4rem;" value='제출하기'></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Footer-->
+        <footer class="footer bg-like">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 h-100 text-center text-lg-center my-auto">
+                        <ul class="list-inline mb-1">
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Privacy Policy</a></li>
+                        </ul>
+                        <ul class='text-face mt-3 mb-3 fa'>&copy; 2021 HOXY.kr. All Rights Reserved.</ul>
+                        <k class="mb-4 mb-lg-0 fa" style="font-size: 0.75em;">HOXY.kr isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc. </k>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+        <!-- Core theme JS-->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var fileTarget = $('.filebox .upload-hidden');
+                fileTarget.on('change', function(){ // 값이 변경되면
+                    if(window.FileReader){ // modern browser
+                        var filename = $(this)[0].files[0].name;
+                    }   
+                    else { // old IE
+                        var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+                    }
+                    $(this).siblings('.kw-profile').val(filename);
+                    // 추출한 파일명 삽입                    
+                    //var str = document.getElementById('upload-name');
+                    //str.innerHTML = filename;
+                });
+
+                var fileTarget = $('.filebox .upload-hidden2');
+                fileTarget.on('change', function(){ // 값이 변경되면
+                    if(window.FileReader){ // modern browser
+                        var filename = $(this)[0].files[0].name;
+                    }   
+                    else { // old IE
+                        var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+                    }
+                    $(this).siblings('.kw-proof_pic_url1').val(filename);
+                });
+
+                var fileTarget = $('.filebox .upload-hidden3');
+                fileTarget.on('change', function(){ // 값이 변경되면
+                    if(window.FileReader){ // modern browser
+                        var filename = $(this)[0].files[0].name;
+                    }   
+                    else { // old IE
+                        var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+                    }
+                    $(this).siblings('.kw-proof_pic_url2').val(filename);
+                });
+
+                var fileTarget = $('.filebox .upload-hidden4');
+                fileTarget.on('change', function(){ // 값이 변경되면
+                    if(window.FileReader){ // modern browser
+                        var filename = $(this)[0].files[0].name;
+                    }   
+                    else { // old IE
+                        var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+                    }
+                    $(this).siblings('.kw-proof_vod_url1').val(filename);
+                });
+            });
+        </script>
+    </body>
+</html>

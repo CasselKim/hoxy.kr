@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {% load static %}
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'boot_strap.css' %}" rel="stylesheet" />
+
+        <style>
+            .fa{
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:400;
+                font-size : 1rem;
+                vertical-align: middle;
+            }
+            .fb {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:500;
+                font-size : 1.1rem;
+                vertical-align: middle;
+            }
+            .fc {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:700;
+                font-size : 1.3rem;
+                vertical-align: middle;
+            }
+            .fd {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:700;
+                font-size : 1.5rem;
+                margin-bottom:0.6rem;
+                color:#000;
+                vertical-align: middle;
+            }
+            .fd_color {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:900;
+                font-size : 1.5rem;
+                margin-bottom:0.6rem;
+                color:#9A6796 ;
+                vertical-align: middle;
+            }
+            .fe {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:300;
+                font-size : 0.8rem;
+                vertical-align: middle;
+            }
+            .ff {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:700;
+                font-size : 2rem;
+                vertical-align: middle;
+            }
+            
+            .penel{
+                padding-top : 3rem;
+                padding-bottom : 5rem;
+            }
+
+            .input-box{
+                padding-top:0.4rem;
+                padding-bottom:0.4rem;
+                padding-left:0.5rem;
+                padding-right:2rem;
+                background-color:#FFF3D9;
+                border-radius:0.3rem;
+                border:0;
+                border-color:rgb(255,255,255);
+                disable:True;
+            }
+            .input-box:focus{
+                outline: 0;
+                box-shadow: 0 0 0 0.25rem rgba(185, 134, 87, 0.25);
+            }
+
+            .mt-custom{
+                margin-top:0.265rem;
+            }
+
+            .form-control::placeholder {
+                color: #B98756 ;
+                opacity: 1;
+            }
+
+            .filebox label { 
+                display: inline-block; 
+                padding: .5em .75em; 
+                color: #fff; 
+                font-size: inherit; 
+                line-height: normal; 
+                vertical-align: middle; 
+                background-color: #B98756 ;
+                cursor: pointer; 
+                border-radius: 0.3rem; 
+            }
+
+            .filebox label:hover{ 
+                color: #fff;
+                background-color: #A37343 ;
+                border-color: #A37343 ;
+            }
+            
+            .filebox input[type="file"] {
+                /* 파일 필드 숨기기 */ 
+                position: absolute; 
+                width: 1px; 
+                height: 1px; 
+                padding: 0; 
+                margin: -1px; 
+                clip:rect(0,0,0,0); 
+                border: 0; 
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-light static-top">
+            <a class="navbar-brand ms-3" style="color:#B98756;" href="/">
+                <img src="{%static 'img/logo_navbar.png'%}" alt="My Image" href="/" style='width:100%; height:100%;padding-top:2rem; padding-bottom:2rem;'>
+            </a>
+        </nav>
+
+        <div class='penel'>    
+            <!-- origin -->
+            <!--
+            {% if error_occur %}
+                에러에러에러
+            {% else %}
+                <div class='container'>
+                    Hello
+                </div>
+            {% endif %}
+            -->
+
+            <!-- test -->
+            <div class='container position-relative text-center'>
+                <div class='row justify-content-center'>
+                    <div class='col-xl-5'>
+                        <div class='mb-4 ff'>
+                            제보되었습니다.
+                        </div>
+                        <div class='mb-5'>
+                            <h100 class='fd me-3'>현재까지 등록된 계정 수</h100>
+                            <h100 class="num fd_color" data-num-ani-slow-point="0.9" data-num-ani-slow-add-interval="15" data-num-ani-interval="5" data-num-ani-stride="1" data-num-ani-start="0" data-num-ani-end="{{account_num}}"></h100>
+                            <h100 class='fd'>개</h100>
+                        </div>
+                        <div class='mb-6'>
+                            <h100 class='fe'>
+                                HOXY는 특수 알고리즘을 통해 해당 유저의 진의여부 판별을 하고 있으며, 보다 정확한 결과를 위해 개발자가 직접 검수작업까지 진행하고 있습니다. 이에 제보부터 등록까지는 평균 5일정도가 소요됩니다. 등록작업이 많으면 그 이상 걸릴 수 있습니다. 빠른 시일 내에 확인하고 적용하도록 하겠습니다. 제보에 감사드립니다.
+                            </h100>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer-->
+        <footer class="footer bg-like">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 h-100 text-center text-lg-center my-auto">
+                        <ul class="list-inline mb-1">
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Privacy Policy</a></li>
+                        </ul>
+                        <ul class='text-face mt-3 mb-3 fa'>&copy; 2021 HOXY.kr. All Rights Reserved.</ul>
+                        <k class="mb-4 mb-lg-0 fa" style="font-size: 0.75em;">HOXY.kr isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc. </k>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            function NumAni__start(selector) {
+                $(selector).each(function(index, node) {
+                    var $el = $(node);
+                    
+                    var start = parseInt($el.attr('data-num-ani-start'));
+                    var interval = parseInt($el.attr('data-num-ani-interval'));
+
+                    $el.attr('data-num-ani-interval-current', interval);
+
+                    $el.text(start);
+
+                    NumAni__increaseWon($el);
+                });
+            }
+
+            function NumAni__increaseWon($el) {
+                var current = parseInt($el.text());
+                var end = parseInt($el.attr('data-num-ani-end'));
+                var stride = parseInt($el.attr('data-num-ani-stride'));
+                var interval = parseInt($el.attr('data-num-ani-interval-current'));
+                var slowPoint = parseFloat($el.attr('data-num-ani-slow-point'))
+
+                if (current < end) {
+                    if ( current > end * slowPoint ) {
+                        interval += parseInt($el.attr('data-num-ani-slow-add-interval'));
+                        if ( interval > 100 ) {
+                            interval = 100;
+                        }
+                        $el.attr('data-num-ani-interval-current', interval);
+                    }
+                    
+                    if ( current + stride > end ) {
+                        $el.text(end);
+                    }
+                    else {
+                        $el.text(current + stride);
+                    }
+
+                    setTimeout(function () {
+                        NumAni__increaseWon($el);
+                    }, interval);
+                }
+                else {
+                    $el.addClass('num-action-done');
+                }
+            }
+
+            NumAni__start('.num');
+        </script>
+        <!-- 
+        data-num-ani-slow-point - 해당 숫자까지 도달하면서 slow 되는 포인트, 높으면 슬로우가 안되고 쭉 올라감
+        data-num-ani-slow-add-interval - 슬로우 될때 부드럽게되는 느낌, 높으면 안부드럽게 갑자기 슬로우 포인트에 도달함
+        data-num-ani-interval - 높을수록 숫자가 오르는 속도가 매우 느림
+        data-num-ani-stride - 오르는 숫자 간격 100이면 100씩 오르고 1이면 1씩 오름
+        data-num-ani-start - 시작 숫자
+        data-num-ani-end - 끝나는 숫자
+        -->
+    </body>
+</html>

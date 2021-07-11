@@ -1,12 +1,212 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-<h1>계정 결과창</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {% load static %}
+        
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
 
-<div>
-    여기는  계정({{ result.id }})의 결과창 화면입니다.
-</div>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'boot_strap.css' %}" rel="stylesheet" />
 
-<form action="{% url 'hoxy:report_button' %}" method="post">
-{% csrf_token %}
-<input type="submit" value="답변등록">
-</form>
+        <style>
+            .fa{
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:400;
+                font-size : 1rem;
+                vertical-align: middle;
+            }
+            .fb {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:500;
+                font-size : 1.1rem;
+                vertical-align: middle;
+            }
+            .fc {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:900;
+                font-size : 80px;
+                vertical-align: middle;
+            }
+            .fd {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight:700;
+                font-size : 1.5rem;
+                margin-bottom:0.6rem;
+                color:#540D0D;
+                vertical-align: middle;
+            }
+
+            .search_bar{
+                padding-bottom : 1rem;
+            }
+
+            .profile{
+                background-color : #fff;
+                border-radius : 1rem;
+                --bs-gutter-x:0rem;
+            }
+
+            .profile-image{
+                width:100%;
+                height:100%;
+                border-radius : 0.5rem;
+            }
+            
+            .penel{
+                padding-top : 3rem;
+                padding-bottom : 10rem;
+            }
+
+            .indentation{
+                padding-left:1rem;
+                background-color:#FFF3D9;
+                border-radius:1rem;
+            }
+
+            .output-box{
+                padding-left:1rem;
+                padding-top:0.3rem;
+                padding-bottom:0.3rem;
+                background-color:#FFF3D9;
+                border-radius:0.3rem;
+                margin-bottom : 0.5rem;
+                vertical-align: middle;
+                width:100%;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-light static-top">
+            <a class="navbar-brand ms-3" style="color:#B98756;" href="/">
+                <img src="{%static 'img/logo_navbar.png'%}" alt="My Image" href="/" style='width:100%; height:100%;padding-top:2rem; padding-bottom:2rem;'>
+            </a>
+        </nav>
+        
+        <div class='penel'>
+            {%if nickname_object %}
+                <div class='container'>
+                    <div class='row justify-content-center'>
+                        <div class="col-md-4 text-center mb-5">
+                            <div class='row search_bar'>
+                                <form action="/result/" method="post">
+                                    <div class="input-group">
+                                        {% csrf_token %}
+                                        <input class="form-control kw fa" type="search" placeholder="의심가는 닉네임을 검색해보세요." name="kw" value="{{kw}}" style='padding-left:2rem;'>
+                                        <button class="btn btn-primary text-center" id="button-submit" type="submit">search!</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class='row profile'>
+                                <img class='profile-image' src={{profile_object.url.url}} alt="My Image">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-4">
+                                <div class='row'><h4 class='fd'>이름(활동명)</h4></div>
+                                <div class='output-box'><h100 class='fa'>{{name_object.name}}</h100></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class='row'><h4 class='fd'>계정</h4><h100 class='fe mb-2'>수정된 날짜 : {{modify_time}}</h100></div>
+                                {% for nickname in nickname_object %}
+                                    <div class='output-box fa'>
+                                        <h100 class='a'>{{nickname.nickname}}</h100>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="mb-4">
+                                <div class='row'><h4 class='fd'>링크</h4></div>
+                                <div class='output-box'>
+                                    <div>
+                                        {% if sns_objects.youtube_url %}
+                                            <a class='fa' href={{sns_objects.youtube_url}}>Youtube</a>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        {% if sns_objects.twitch_url %}
+                                            <a class='fa' href={{sns_objects.twitch_url}}>Twitch</a>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        {% if sns_objects.afreeca_url %}
+                                            <a class='fa' href={{sns_objects.afreeca_url}}>Afreeca TV</a>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        {% if sns_objects.namu_url %}
+                                            <a class='fa' href={{sns_objects.namu_url}}>Namu Wiki</a>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        {% if sns_objects.instagram_url %}
+                                            <a class='fa' href={{sns_objects.instagram_url}}>Instagram</a>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        {% if sns_objects.dcinside_url %}
+                                            <a class='fa' href={{sns_objects.dcinside_url}}>DC Inside</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+            {% elif is_overflow %}
+                <div class='container text-center fd' style='margin-top:8rem; margin-bottom:2rem;'>검색하신 {{kw}} 닉네임은 한개의 닉네임에 두개 이상의 계정이 존재합니다.</div>
+            {% elif is_empty %}
+                <div class='container text-center fd' style='margin-top:8rem; margin-bottom:2rem;'>검색하신 {{kw}} 닉네임에 해당하는 계정을 찾을 수 없습니다.</div>
+            {% endif %}
+
+            <div class='input-group justify-content-center' style='margin-left:0rem; margin-bottom:5rem;'>
+                <div class='text-center ms-4 me-4 mb-4 mt-1'><h class='fb'>알고있는 유명인이 등록되어있지 않나요?</h></div>
+                <form class='text-center ' action="{% url 'hoxy:report' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary text-center" id="button-submit" type="submit" style="padding-top:0.4rem; padding-bottom:0.4rem;">제보하기</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Footer-->
+        <footer class="footer bg-like">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 h-100 text-center text-lg-center my-auto">
+                        <ul class="list-inline mb-1">
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a class='fa' href="#!" style='color:#000'>Privacy Policy</a></li>
+                        </ul>
+                        <ul class='text-face mt-3 mb-3 fa'>&copy; 2021 HOXY.kr. All Rights Reserved.</ul>
+                        <k class="mb-4 mb-lg-0 fa" style="font-size: 0.75em;">HOXY.kr isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc. </k>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'scripts.js' %}"></script>
+
+    </body>
+</html>
