@@ -5,7 +5,12 @@
 - **Participant** : Just Me
 - **Destination** : HTML, CSS, 장고, DB(설계), 퍼블리싱 입문 + 재미
 - **Project Managing** : [노션 링크](https://www.notion.so/casselkim/HOXY-686358c4cac94619ae9af01d569646d2)  
-- **Docker** : [노션 링크](https://www.notion.so/casselkim/7154a622aa294505a88c99e60f8710c1)  
+- **Publishing**  
+
+  - [도커](https://www.notion.so/casselkim/7154a622aa294505a88c99e60f8710c1)  
+  - [AWS ECR에 Docker 올리기](https://casselkim.notion.site/AWS-ECR-Docker-b566ae679d9d4dd2b01d48d09194dcc1)  
+  - [ECR에 올라간 이미지 EC2로 가져오기](https://www.notion.so/casselkim/ECR-EC2-542fd9b5c90b43adbfdcbf970f17ec65)  
+  - [도커 컨테이너 만들고 장고 실행하기](https://www.notion.so/casselkim/ECR-EC2-542fd9b5c90b43adbfdcbf970f17ec65)  
 
 ## Architecture
 ![image](main.png)
