@@ -11,6 +11,7 @@
   - [AWS ECR에 Docker 올리기](https://casselkim.notion.site/AWS-ECR-Docker-b566ae679d9d4dd2b01d48d09194dcc1)  
   - [ECR에 올라간 이미지 EC2로 가져오기](https://www.notion.so/casselkim/ECR-EC2-542fd9b5c90b43adbfdcbf970f17ec65)  
   - [도커 컨테이너 만들고 장고 실행하기](https://www.notion.so/casselkim/ECR-EC2-542fd9b5c90b43adbfdcbf970f17ec65)  
+  - [AWS에 도메인 넣기](https://www.notion.so/casselkim/efc75556e25f4d8ba0048be05e5a34a2)  
 
 ## Architecture
 ![image](main.png)
