@@ -25,8 +25,10 @@
 ┣ Ubuntu 18.04.5  
 ┣ NGiNX  
 ┣ uWSGI  
-┣ Celery  
+┣ Celery(beat)  
 ┗ Rabbitmq  
+- AWS EC2 : t2.micro, ubuntu 18.04
+- AWS ECR
 
 ## Requirements
 - Python==3.6.9
