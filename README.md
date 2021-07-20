@@ -12,6 +12,7 @@
   - [ECR에 올라간 이미지 EC2로 가져오기](https://www.notion.so/casselkim/ECR-EC2-542fd9b5c90b43adbfdcbf970f17ec65)  
   - [도커 컨테이너 만들고 장고 실행하기](https://www.notion.so/casselkim/ECR-EC2-542fd9b5c90b43adbfdcbf970f17ec65)  
   - [AWS에 도메인 넣기](https://www.notion.so/casselkim/efc75556e25f4d8ba0048be05e5a34a2)  
+  - [Celery beat로 스케쥴링하기](https://www.notion.so/casselkim/Celery-428e9a20fe3e44a7bf486e54cc6187b3)  
 
 ## Architecture
 ![image](main.png)
