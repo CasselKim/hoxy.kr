@@ -11,7 +11,8 @@
 　4. [아키텍쳐 설계](https://www.notion.so/HOXY-686358c4cac94619ae9af01d569646d2)
 　5. [개발](https://www.notion.so/HOXY-686358c4cac94619ae9af01d569646d2)
 　6. [유지·보수](https://www.notion.so/HOXY-686358c4cac94619ae9af01d569646d2)
-　7. [느낀점](https://www.notion.so/HOXY-686358c4cac94619ae9af01d569646d2)
+　7. [느낀점](https://www.notion.so/HOXY-686358c4cac94619ae9af01d569646d2)  
+- [**Develop Diary**](https://www.notion.so/casselkim/c3c446341c224311b8e49fb679c39e90)  
 
 
 ## Architecture
