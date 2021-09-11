@@ -40,3 +40,8 @@
 ## Demo
 [hoxy.kro.kr](http://hoxy.kro.kr)  
 ![image](demo.png)
+
+## Progress
+Stopped because of API Problem  
+RIOT GENE#GENE : This not something we can support.  
+RIOT GENE#GENE : We do not want to endorse products where stalking is basically a goal.  
