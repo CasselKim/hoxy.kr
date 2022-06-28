@@ -38,7 +38,6 @@
 - Requests
 
 ## Demo
-[hoxy.kro.kr](http://hoxy.kro.kr)  
 ![image](demo.png)
 
 ## Progress
